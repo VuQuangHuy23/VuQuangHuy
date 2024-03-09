@@ -1,0 +1,19 @@
+.background-image {
+    background-image: url('abc.jpg');
+    background-size: cover; /* Đảm bảo ảnh nền hiển thị một cách đầy đủ và không bị vỡ */
+    background-position: center; /* Đặt vị trí ảnh nền ở giữa */
+    background-attachment: fixed; /* Làm cho ảnh nền cố định và không di chuyển khi cuộn trang */
+    filter: blur(5px); /* Làm mờ ảnh nền */
+    position: fixed; /* Đặt vị trí của ảnh là cố định */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Đảm bảo ảnh nền nằm sau văn bản */
+}
+
+.content {
+    position: relative; /* Đặt vị trí tương đối cho nội dung */
+    z-index: 2; /* Đảm bảo nội dung nằm trên ảnh nền */
+    color: white; /* Màu chữ trắng để đối phó với nền ảnh */
+}

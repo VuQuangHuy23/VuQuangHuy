@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Màu nền cho toàn bộ trang */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inner-container {
+    display: flex;
+    background-color: #b3ffb3; /* Màu nền cho khung chứa hình */
+    border: 2px solid green; /* Viền xanh lá cho khung chứa hình */
+    padding: 20px; /* Khoảng cách giữa khung chứa hình và các hình bên trong */
+}
+
+.shape {
+    margin-right: 20px;
+    line-height: 1.2;
+    color: black; /* Màu của các dấu * */
+}
+
+.rectangle pre,
+.oval pre,
+.arrow pre,
+.diamond pre {
+    margin: 0; /* Loại bỏ margin của thẻ pre */
+}

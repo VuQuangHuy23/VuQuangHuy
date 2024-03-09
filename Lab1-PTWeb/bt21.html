@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tính toán hằng số e và e^x</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #output {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <button onclick="tinhGiaiThua()">Tính giai thừa</button>
+    <button onclick="uocTinhE()">Ước tính giá trị của e</button>
+    <button onclick="tinhEx()">Tính giá trị của e^x</button>
+    <div id="output"></div>
+</div>
+
+<script>
+// a) Tính giai thừa
+function tinhGiaiThua() {
+    var n = parseInt(prompt("Nhập một số nguyên không âm:"));
+    var outputDiv = document.getElementById("output");
+    
+    if (isNaN(n) || n < 0) {
+        outputDiv.innerHTML = "Vui lòng nhập một số nguyên không âm.";
+        return;
+    }
+    
+    var giaiThua = tinhGiaiThuaRecursive(n);
+    outputDiv.innerHTML = "Giai thừa của " + n + " là: " + giaiThua;
+}
+
+function tinhGiaiThuaRecursive(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * tinhGiaiThuaRecursive(n - 1);
+}
+
+// b) Ước tính giá trị của hằng số e
+function uocTinhE() {
+    var n = parseInt(prompt("Nhập số lần ước tính e:"));
+    var e = 1;
+    var giaiThua = 1;
+    for (var i = 1; i <= n; i++) {
+        giaiThua *= i;
+        e += 1 / giaiThua;
+    }
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = "Ước tính giá trị của e: " + e;
+}
+
+// c) Tính giá trị của e^x
+function tinhEx() {
+    var x = parseFloat(prompt("Nhập giá trị của x:"));
+    var n = parseInt(prompt("Nhập số lần ước tính e^x:"));
+    var result = 1;
+    for (var i = 1; i <= n; i++) {
+        var giaiThua = 1;
+        for (var j = 1; j <= i; j++) {
+            giaiThua *= j;
+        }
+        result += Math.pow(x, i) / giaiThua;
+    }
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = "Giá trị của e^x: " + result;
+}
+</script>
+
+</body>
+</html>

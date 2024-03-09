@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng và tích các chữ số</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Nhập số nguyên dương 𝑛:</h2>
+    <input type="number" id="number" min="1" placeholder="Nhập số nguyên dương">
+    <button onclick="calculate()">Tính</button>
+
+    <div id="output"></div>
+
+    <script>
+        function calculate() {
+            var number = document.getElementById("number").value;
+
+            // Chuyển số thành chuỗi để xử lý từng chữ số
+            var digits = number.toString().split('').map(Number);
+
+            // Tính tổng và tích các chữ số
+            var sum = 0;
+            var product = 1;
+            for (var i = 0; i < digits.length; i++) {
+                sum += digits[i];
+                product *= digits[i];
+            }
+
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = "<h2>Kết quả:</h2>" +
+                "<p>Tổng các chữ số: " + sum + "</p>" +
+                "<p>Tích các chữ số: " + product + "</p>";
+        }
+    </script>
+
+</body>
+
+</html>

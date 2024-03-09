@@ -1,0 +1,26 @@
+body{
+background-color: #A06D21;
+color: white;
+text-align: center;
+margin: 0;
+padding: 0;
+position: relative;
+}
+
+h1 {
+color: #ffcc00;
+}
+
+p {
+text-align: justify;
+margin: 0 50px; 
+}
+
+img {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+opacity: 0.3;
+z-index: -1; 
+}
